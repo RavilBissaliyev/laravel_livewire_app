@@ -7,4 +7,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', ShowHome::class);
+Route::get('/', ShowHome::class)->name('home');
