@@ -108,11 +108,6 @@
 
 {{ $slot }}
 
-
-
-
-
-
 <footer class="section-sm bg-tertiary">
 	<div class="container">
 		<div class="row justify-content-between">

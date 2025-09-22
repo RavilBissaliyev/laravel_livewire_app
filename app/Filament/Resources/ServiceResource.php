@@ -6,6 +6,8 @@ use App\Filament\Resources\ServiceResource\Pages;
 use App\Filament\Resources\ServiceResource\RelationManagers;
 use App\Models\Service;
 use Filament\Forms;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -24,7 +26,14 @@ class ServiceResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make()
+                TextInput::make('title')->label('Title')->required(),
+                TextInput::make('icon_class')->label('Icon Class'),
+                TextInput::make('short_desc')->label('Short Description')->required(),
+                RichEditor::make('decription')->columnSpan(2),
+                Select::make('status')->label('Status')->options([
+                    1 => 'Active',
+                    0 => 'Block',
+                ]),
             ]);
     }
 
